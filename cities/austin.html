@@ -9,13 +9,12 @@
 </head>
 <body>
   <header>
-    <h1>Austin Rx Service</h1>
-    <p>SAME-DAY MEDICATIONS DELIVERED TO YOUR LOCAL PHARMACY</p>
+    <!-- Header will be dynamically populated -->
   </header>
   <main>
     <section>
-      <h2>Visiting Austin or a Student at UT?</h2>
-      <p>If you're in town for SXSW, ACL, a conference, or just a weekend trip — or you're a UT Austin student — you can skip the clinic and get quick access to common medications online. Our doctors review your request and, if appropriate, send your prescription to a nearby pharmacy in just hours.</p>
+      <h2>Quick Prescriptions in Austin</h2>
+      <p>Whether you're a resident, student, or just visiting Austin, you can skip the clinic and get quick access to common medications online. Our doctors review your request and, if appropriate, send your prescription to a nearby pharmacy in just hours.</p>
       <div class="vintage-stamp">Local service</div>
     </section>
 
@@ -55,20 +54,8 @@
   </main>
 
   <div id="footer-container"></div>
-  <script>
-    fetch('../footer-template.html')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Network response was not ok ' + response.statusText);
-        }
-        return response.text();
-      })
-      .then(data => {
-        document.getElementById('footer-container').innerHTML = data;
-      })
-      .catch(error => {
-        console.error('Error fetching footer:', error);
-      });
-  </script>
+  <footer></footer>
+  
+  <script src="../js/templates.js"></script>
 </body>
 </html>

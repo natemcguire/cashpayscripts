@@ -9,13 +9,12 @@
 </head>
 <body>
   <header>
-    <h1>Albuquerque Rx Service</h1>
-    <p>SAME-DAY MEDICATIONS DELIVERED TO YOUR LOCAL PHARMACY</p>
+    <!-- Header will be dynamically populated -->
   </header>
   <main>
     <section>
       <h2>Quick Prescriptions in Albuquerque</h2>
-      <p>Whether you're a UNM student, visiting for the International Balloon Fiesta, or a local resident, you can skip the clinic and get quick access to common medications online. Our doctors review your request and, if appropriate, send your prescription to a nearby pharmacy in just hours.</p>
+      <p>Whether you're a resident, student, or just visiting Albuquerque, you can skip the clinic and get quick access to common medications online. Our doctors review your request and, if appropriate, send your prescription to a nearby pharmacy in just hours.</p>
       <div class="vintage-stamp">Local service</div>
     </section>
 
@@ -30,7 +29,7 @@
         <div class="process-step">
           <div class="step-number">1</div>
           <div class="step-content">
-            Complete the medical intake form. <span class="pricing-note">Each prescription is $50 ($70 if with video).</span>
+            Complete the medical intake form. <span class="pricing-note">Each prescription is $50.</span>
           </div>
         </div>
         <div class="process-step">
@@ -55,12 +54,8 @@
   </main>
 
   <div id="footer-container"></div>
-  <script>
-    fetch('/footer-template.html')
-      .then(response => response.text())
-      .then(data => {
-        document.getElementById('footer-container').innerHTML = data;
-      });
-  </script>
+  <footer></footer>
+  
+  <script src="../js/templates.js"></script>
 </body>
 </html>
