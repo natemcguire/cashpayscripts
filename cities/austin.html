@@ -10,7 +10,7 @@
 <body>
   <header>
     <h1>Austin Rx Service</h1>
-    <p>SAME-DAY MEDICATIONS FOR UT STUDENTS AND VISITORS</p>
+    <p>SAME-DAY MEDICATIONS DELIVERED TO YOUR LOCAL PHARMACY</p>
   </header>
   <main>
     <section>
@@ -56,10 +56,18 @@
 
   <div id="footer-container"></div>
   <script>
-    fetch('/footer-template.html')
-      .then(response => response.text())
+    fetch('../footer-template.html')
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.text();
+      })
       .then(data => {
         document.getElementById('footer-container').innerHTML = data;
+      })
+      .catch(error => {
+        console.error('Error fetching footer:', error);
       });
   </script>
 </body>
