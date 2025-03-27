@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Same-Day Prescriptions in Denver - Fast Local Pickup</title>
+  <meta name="description" content="Need medication fast in Denver? Get same-day prescriptions for flu, cough, anxiety, birth control, and more. Pickup at your local pharmacy today, if approved by a licensed doctor." />
+  <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <header>
+    <h1>Denver Rx Service</h1>
+    <p>SAME-DAY MEDICATIONS DELIVERED TO YOUR LOCAL PHARMACY</p>
+  </header>
+  <main>
+    <!-- Main content will go here -->
+  </main>
+
+  <div id="footer-container"></div>
+  <script>
+    fetch('/footer-template.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
+</body>
+</html>

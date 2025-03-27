@@ -39,7 +39,7 @@
         <div class="process-step">
           <div class="step-number">1</div>
           <div class="step-content">
-            Complete the medical intake form. <span class="pricing-note">Each prescription is $50.</span>
+            Complete the medical intake form. <span class="pricing-note">Each prescription is $50 ($70 if with video).</span>
           </div>
         </div>
         <div class="process-step">
@@ -59,8 +59,17 @@
 
     <div class="cta">
       <p>Ready for fast relief?</p>
-      <a href="/">Browse Available Medications</a>
+      <a href="/">Browse Available Treatments</a>
     </div>
   </main>
+
+  <div id="footer-container"></div>
+  <script>
+    fetch('/footer-template.html')
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById('footer-container').innerHTML = data;
+      });
+  </script>
 </body>
 </html>
