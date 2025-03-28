@@ -120,6 +120,27 @@ function loadFooter() {
   }
 }
 
+// Function to add Google Analytics to head
+function addGoogleAnalytics() {
+  // Create the first script tag (external script)
+  const scriptExternal = document.createElement('script');
+  scriptExternal.async = true;
+  scriptExternal.src = "https://www.googletagmanager.com/gtag/js?id=G-94MGZHFC0X";
+  
+  // Create the second script tag (inline script)
+  const scriptInline = document.createElement('script');
+  scriptInline.textContent = `
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-94MGZHFC0X');
+  `;
+  
+  // Append both scripts to the head of the document
+  document.head.appendChild(scriptExternal);
+  document.head.appendChild(scriptInline);
+}
+
 // Initialize everything when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
   const isHomePage = window.location.pathname === '/' || 
@@ -132,4 +153,5 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   loadFooter();
+  addGoogleAnalytics(); // Add Google Analytics to all pages
 });

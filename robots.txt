@@ -1,5 +1,10 @@
+# robots.txt for Cash Pay Scripts
 User-agent: *
 Allow: /
+Allow: /cities/
 Disallow: /js/
+Disallow: /*.sh$
+Disallow: /test-city-name.html
 
+# Sitemap location
 Sitemap: https://yourwebsite.com/sitemap.xml

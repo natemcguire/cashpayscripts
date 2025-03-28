@@ -39,11 +39,12 @@ for file in $CITY_FILES; do
   # Format the city name
   CITY_NAME=$(format_city_name "$CITY_SLUG")
   
-  # Replace the placeholder with the actual city name
-  CITY_CONTENT="${TEMPLATE//\[CITY\]/$CITY_NAME}"
+  # Replace the placeholders with the actual city name and slug
+  CONTENT="${TEMPLATE//\[CITY\]/$CITY_NAME}"
+  CONTENT="${CONTENT//\[CITY-SLUG\]/$CITY_SLUG}"
   
   # Write the content to the file
-  echo "$CITY_CONTENT" > "$file"
+  echo "$CONTENT" > "$file"
   
   echo "Updated $file with '$CITY_NAME' successfully."
 done
